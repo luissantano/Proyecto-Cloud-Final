@@ -1,5 +1,7 @@
 package com.rest.spring.core;
-// Objeto para guardar los restaurantes
+
+
+//Creamos un objeto para almacenar los restaurantes
 
 
 import java.util.ArrayList;
@@ -21,8 +23,8 @@ public class Restaurant {
 
     private String ID;
 
-//Utilizamos una ArrayList para guardar los comentarios
 
+    //Private arraylist para comentarios
     private ArrayList<String> opinions;
 
     public ArrayList<String> getOpinions() {
@@ -91,7 +93,7 @@ public class Restaurant {
         this.tipo = tipo;
     }
 
-//Contructor de los comentarios
+
 
     public Restaurant() {
         this.opinions = new ArrayList<String>();
