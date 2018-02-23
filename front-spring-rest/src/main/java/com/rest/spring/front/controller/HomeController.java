@@ -1,4 +1,4 @@
-package com.rest.spring.front.controlador;
+package com.rest.spring.front.controller;
 
 import com.rest.spring.core.basededatos.ReadDB;
 import com.rest.spring.core.Restaurant;

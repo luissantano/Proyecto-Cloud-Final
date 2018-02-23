@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 
 @Configuration
-public class ConfiguracionDeInicio {
+public class Config {
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {

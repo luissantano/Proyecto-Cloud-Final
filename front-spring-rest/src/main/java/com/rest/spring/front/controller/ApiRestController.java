@@ -1,4 +1,4 @@
-package com.rest.spring.front.controlador;
+package com.rest.spring.front.controller;
 
 import com.rest.spring.core.basededatos.ReadDB;
 import com.rest.spring.core.Restaurant;
@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @RestController
 @RequestMapping(path = "/rest/api")
-public class ControladorDeLaApiRest {
+public class ApiRestController {
 
     private final AtomicLong counter = new AtomicLong();
 
