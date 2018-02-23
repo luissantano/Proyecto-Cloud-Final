@@ -1,6 +1,6 @@
 package com.rest.spring.front.controlador;
 
-import com.rest.spring.core.basededatos.ConexionBaseDeDatos;
+import com.rest.spring.core.basededatos.ReadDB;
 import com.rest.spring.core.Restaurant;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +21,8 @@ public class ControladorDeLaApiRest {
 
     @RequestMapping(path = "/restaurantes", method = RequestMethod.GET)
     public List<Restaurant> listaRestaurantes(){
-        ConexionBaseDeDatos conexionBaseDeDatos = new ConexionBaseDeDatos();
-            return conexionBaseDeDatos.readRestaurant("");
+        ReadDB readDB = new ReadDB();
+            return readDB.readRestaurant("");
     }
 
 }

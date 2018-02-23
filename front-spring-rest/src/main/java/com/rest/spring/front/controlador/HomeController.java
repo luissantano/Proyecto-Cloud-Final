@@ -1,6 +1,6 @@
 package com.rest.spring.front.controlador;
 
-import com.rest.spring.core.basededatos.ConexionBaseDeDatos;
+import com.rest.spring.core.basededatos.ReadDB;
 import com.rest.spring.core.Restaurant;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +25,8 @@ public class HomeController {
     }
     @RequestMapping(value = "/restaurantes", method = RequestMethod.GET)
     public String init(@ModelAttribute("model") ModelMap model) {
-        ConexionBaseDeDatos conexionBaseDeDatos = new ConexionBaseDeDatos();
-        List<Restaurant> data = conexionBaseDeDatos.readRestaurant("");
+        ReadDB readDB = new ReadDB();
+        List<Restaurant> data = readDB.readRestaurant("");
         model.addAttribute("restaurantes", data);
         return "restaurantes";
     }

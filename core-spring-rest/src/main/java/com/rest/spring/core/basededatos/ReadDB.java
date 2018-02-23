@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-public class ConexionBaseDeDatos {
+public class ReadDB {
 
     //Metemos en variables los parametros que usaremos para conectarnos a la DB , como la IP , user , password .
     
