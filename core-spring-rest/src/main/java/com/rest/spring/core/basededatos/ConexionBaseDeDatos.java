@@ -8,11 +8,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-//Lectura de los restaurantes guardados en la base de datos
 
 public class ConexionBaseDeDatos {
 
-    //Ni zorra de lo que estoy haciendo
+    //Metemos en variables los parametros que usaremos para conectarnos a la DB , como la IP , user , password .
+    
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
 
     private static final String THIN_URL = "jdbc:oracle:thin:@35.205.41.45:1521:XE";
@@ -23,7 +23,6 @@ public class ConexionBaseDeDatos {
 
 
 
-//Le pasamos al lector de base de datos el parametro que queremos utilizar para buscar en nuestro formulario
         public ArrayList readRestaurant (String cercar){
 
             ArrayList rst = new ArrayList();
@@ -37,26 +36,22 @@ public class ConexionBaseDeDatos {
                 Statement stmt = con.createStatement();
                 ResultSet rs;
 
-//Le decimos como queremos que actue cuando le llega el parametro vacio y cuando le llega con lo que queremos buscar
 
                 if (cercar == null || cercar.equals("")) {
 
-//Asi actua el programa cuando el parametro le llega vacio
-
+             //Cuando cercar = null o equivale a nada , nos busca en la base de datos sin filtro 
                     rs = stmt.executeQuery("SELECT * FROM (SELECT RE.RES_NOM, RE.RES_ADRECA, RE.RES_WEB, RE.RES_TELEFON, RE.RES_URL_IMG, RR.TRS_DESCRIPCIO, RE.RES_CODI FROM " +
                             "RESTAURANTS RE, TRESTAURANTS RR WHERE RE.RES_TRS_CODI = RR.TRS_CODI ORDER BY RES_MITJANA DESC)where ROWNUM <= 5");
 
 
                 } else {
 
-//Asi actua el programa cuando el parametro le llega con lo que queremos buscar
-
+                    //En esta consulta se hace un select con el parametro que nosotros introducimos
                     rs = stmt.executeQuery("SELECT * FROM (SELECT RE.RES_NOM, RE.RES_ADRECA, RE.RES_WEB, RE.RES_TELEFON, RE.RES_URL_IMG, RR.TRS_DESCRIPCIO, RE.RES_CODI FROM " +
                             "RESTAURANTS RE, TRESTAURANTS RR WHERE RE.RES_TRS_CODI = RR.TRS_CODI AND RE.RES_NOM LIKE '%" + cercar + "%' ORDER BY RES_MITJANA DESC)where ROWNUM <= 5");
 
                 }
 
-//Guarda los datos que extrae de la base de datos
 
                 while (rs.next()) {
 
@@ -87,7 +82,6 @@ public class ConexionBaseDeDatos {
 
         }
 
-//Metodo que lee el Servlet para mostrarnos la informacion de un restaurante en concreto
 
         public Restaurant readRestaurant2 (String idinformacio){
 
@@ -116,7 +110,9 @@ public class ConexionBaseDeDatos {
                     rstt.setUrl_imagen(rs.getString("RES_URL_IMG"));
                     rstt.setID(rs.getString("RES_CODI"));
 
-//Obtenemos los comentarios de la base de datos
+
+                    
+                            //Con esta consulta , se obtienen los comentarios
 
                     Statement stmtt = con.createStatement();
                     ResultSet rsst;
