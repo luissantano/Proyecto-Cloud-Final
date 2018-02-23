@@ -12,13 +12,13 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <!-- Dependencia para utilizar la base de datos de oracle -->
+        <!-- Dependencia para la lectura de la base de datos-->
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc8</artifactId>
             <version>12.2.0.1</version>
         </dependency>
-        <!-- Dependencia para controlar la persistencia y el mapeo objeto/relacioanl -->
+        <!-- Es un framework que maneja datos relacionales en aplicaciones -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
@@ -65,7 +65,7 @@
 
     <build>
         <plugins>
-            <!-- any other plugins -->
+            <!-- Plugins-->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
