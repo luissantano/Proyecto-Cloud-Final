@@ -3,8 +3,50 @@ package com.rest.spring.core;
 
 //Creamos un objeto para almacenar los restaurantes
 
+//import javax.persistance.Entity
+//import javax.persistance.Column
 
 import java.util.ArrayList;
+
+/*
+Implementación de functional
+@Entity()
+public class Restaurant{
+
+@Column(name="RES_CODI")
+
+    private String code;
+
+@Column(name="RES_NOM")
+
+    private  String name;
+
+@Column(name="RES_ADRECA")
+    private String address;
+
+@Column(name="RES_WEB")
+
+    private  String website;
+
+@Column(name="RES_TELEFON")
+
+    private String numero;
+
+@Column(name="TRS_DESCRIPCIO")
+
+    private String type;
+
+@Column(name="RES_URL_IMG")
+
+    private String images;
+
+    @Column(name="RES_MITJANA")
+
+    private String mitjana;
+
+}
+
+ */
 
 
 public class Restaurant {
