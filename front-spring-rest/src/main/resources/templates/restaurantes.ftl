@@ -8,10 +8,10 @@
 
     <table width="100%"class="nombre">
         <tr>
-            <th>Tipo</th>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Direction</th>
+            <th>Tlf</th>
         </tr>
     </table>
 <script
@@ -26,7 +26,7 @@
             console.log($("#myTitle").html());
             $.get("/rest/api/restaurantes", function (data) {
                 console.log(data);
-                var contentHtml = "<h2>Nombre</h2>";
+                var contentHtml = "<h2>Noame</h2>";
                 $.each(data, function( index, value ) {
                     contentHtml ="";
                     var nombre= "<td>"+value.nombre+"</td>";
@@ -37,7 +37,7 @@
                     $(".nombre").append(contentHtml);
                 });
 
-                console.log("Load was performed.");
+                console.log("Load OK.");
             });
         });
     </script>
