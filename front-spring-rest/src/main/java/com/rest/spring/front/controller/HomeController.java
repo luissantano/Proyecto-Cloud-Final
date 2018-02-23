@@ -1,6 +1,6 @@
 package com.rest.spring.front.controller;
 
-import com.rest.spring.core.basededatos.ReadDB;
+import com.rest.spring.core.DataBase.ReadDB;
 import com.rest.spring.core.Restaurant;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

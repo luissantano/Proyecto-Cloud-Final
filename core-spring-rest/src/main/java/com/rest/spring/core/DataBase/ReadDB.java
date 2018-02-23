@@ -1,4 +1,4 @@
-package com.rest.spring.core.basededatos;
+package com.rest.spring.core.DataBase;
 
 import com.rest.spring.core.Restaurant;
 
